@@ -15,7 +15,7 @@ import li.cil.oc.api.Items;
 import li.cil.oc.api.Machine;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid = Thistle.MODID, name = Thistle.NAME, version = Thistle.VERSION, dependencies = "required-after:OpenComputers@[1.7.0,)")
+@Mod(modid = Thistle.MODID, name = Thistle.NAME, version = Thistle.VERSION, dependencies = "required-after:OpenComputers@[1.6.0,)", acceptableRemoteVersions = "*")
 public class Thistle {
 	public static final String MODID = "thistle";
 	public static final String NAME = "Thistle Computer";

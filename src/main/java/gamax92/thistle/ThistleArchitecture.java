@@ -104,7 +104,7 @@ public class ThistleArchitecture implements Architecture {
 	public void close() {
 		ValueManager.removeAll(this.machine);
 		if (vm != null) {
-			FMLCommonHandler.instance().bus().unregister(vm.machine);
+			//FMLCommonHandler.instance().bus().unregister(vm);
 			vm = null;
 		}
 	}

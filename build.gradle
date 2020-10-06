@@ -29,12 +29,13 @@ repositories {
 }
 
 minecraft {
-    version = "1.7.10-10.13.4.1614-1.7.10"
+    version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "eclipse"
 }
 
 dependencies {
-    compile "li.cil.oc:OpenComputers:MC1.7.10-1.7.+:dev"
+    //compile "li.cil.oc:OpenComputers:MC1.7.10-1.7.+:dev"
+	compile files("libs/OpenComputers-MC1.7.10-1.6.2+cef745e-dev.jar")
 }
 
 processResources {

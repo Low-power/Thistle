@@ -1,8 +1,9 @@
 package gamax92.thistle.devices;
 
+import gamax92.thistle.util.UUIDHelper;
+import gamax92.thistle.Thistle;
 import com.loomcom.symon.Bus;
 import com.loomcom.symon.devices.Device;
-import gamax92.thistle.util.UUIDHelper;
 import li.cil.oc.api.machine.Machine;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -52,8 +53,12 @@ public class ComputerInfo extends Device {
 	public void setBus(Bus bus) {
 		super.setBus(bus);
 		Machine machine = (Machine) bus.getMachine().getContext();
-
 		computerUUID = UUIDHelper.encodeUUID(machine.node().address());
-		tmpfsUUID = UUIDHelper.encodeUUID(machine.tmpAddress());
+		String tmpfs_address = machine.tmpAddress();
+		if(tmpfs_address == null) {
+			Thistle.log.warn("Failed to create tmpfs");
+		} else {
+			tmpfsUUID = UUIDHelper.encodeUUID(tmpfs_address);
+		}
 	}
 }

@@ -26,7 +26,7 @@ public class ThistleVM {
 			}
 			machine.getCpu().reset();
 		} catch (Exception e) {
-			Thistle.log.warn("Failed to setup Thistle", e);
+			throw new RuntimeException("Failed to setup Thistle", e);
 		}
 	}
 
